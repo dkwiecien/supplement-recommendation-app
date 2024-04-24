@@ -3,21 +3,26 @@
 const toggleBackground = () => {
     const backgroundMode = document.getElementById("backgroundMode") as HTMLInputElement | null;
     const header = document.getElementById("header") as HTMLHeadElement | null;
+    const footer = document.getElementById("footer") as HTMLElement | null;
 
-    if (backgroundMode && header) {
-        if (backgroundMode.checked) {
-            document.body?.classList.replace("bg-neutral-950", "bg-neutral-200");
-            document.body?.classList.replace("text-white", "text-black");
+    if (backgroundMode?.checked) {
+        document.body?.classList.replace("bg-neutral-950", "bg-neutral-200");
+        document.body?.classList.replace("text-white", "text-black");
 
-            header.classList.replace("bg-neutral-900", "bg-neutral-300");
-        }
-        else {
-            document.body?.classList.replace("bg-neutral-200", "bg-neutral-950");
-            document.body?.classList.replace("text-black", "text-white");
+        header?.classList.replace("bg-neutral-900", "bg-neutral-300");
 
-            header.classList.replace("bg-neutral-300", "bg-neutral-900");
-        }
+        footer?.classList.replace("bg-neutral-900", "bg-neutral-300");
     }
+    else {
+        document.body?.classList.replace("bg-neutral-200", "bg-neutral-950");
+        document.body?.classList.replace("text-black", "text-white");
+
+        header?.classList.replace("bg-neutral-300", "bg-neutral-900");
+
+        footer?.classList.replace("bg-neutral-300", "bg-neutral-900");
+
+    }
+
 }
 </script>
 
